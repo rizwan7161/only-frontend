@@ -1,4 +1,7 @@
-Webhoook apna kaam krooooooo
+یہ عشق نہیں آساں اتنا ہی سمجھ لیجے
+اک آگ کا دریا ہے اور ڈوب کے جانا ہے
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
