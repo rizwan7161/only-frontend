@@ -1,14 +1,18 @@
-# Base image
 FROM node:18-alpine
-
-# Working directory inside container
 WORKDIR /app
 
-# Install serve globally (to serve build folder)
+# Copy package files and install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy full source code
+COPY . .
+
+# Build the frontend
+RUN npm run build
+
+# Install serve globally to serve the build folder
 RUN npm install -g serve
 
-# Default command to run container
-# '-s build' means serve the build folder
-# '-l 3000' port
-# '--single' for SPA routing
+# Command to run container
 CMD ["serve", "-s", "build", "-l", "3000", "--single"]
