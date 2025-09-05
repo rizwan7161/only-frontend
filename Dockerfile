@@ -9,7 +9,9 @@ RUN npm install
 COPY . .
 
 # Build the frontend
-RUN npm run build
+# Build the frontend with increased memory
+RUN NODE_OPTIONS="--max-old-space-size=4096" npm run build
+
 
 # Install serve globally to serve the build folder
 RUN npm install -g serve
