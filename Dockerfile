@@ -11,8 +11,9 @@ RUN npm install --production
 # Copy source code
 COPY . .
 
-# Build React app
+ENV NODE_OPTIONS="--max-old-space-size=4096"
 RUN npm run build
+
 
 # Install serve to serve static build
 RUN npm install -g serve
